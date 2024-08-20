@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+# python env
+/tools/secureenviroment/
