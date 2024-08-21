@@ -28,6 +28,14 @@ jobs:
       - name: Install App Center CLI
         run: npm install -g appcenter-cli
 
+      - name: login
+        env:
+          APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_APP_SECRET }}  # Ensure you've added this token in your GitHub secrets
+        run: |
+          appcenter login "
+
+
+
       - name: Publish APK to App Center
         env:
           APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_APP_SECRET }}  # Ensure you've added this token in your GitHub secrets
