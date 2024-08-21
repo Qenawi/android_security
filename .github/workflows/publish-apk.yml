@@ -32,7 +32,7 @@ jobs:
         env:
           APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_APP_SECRET }}  # Ensure you've added this token in your GitHub secrets
         run: |
-          appcenter login "
+          appcenter login 
 
 
 
