@@ -18,6 +18,10 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        if (System.getenv("APPCENTER_APP_SECRET") != null) {
+            buildConfigField("String", "APPCENTER_APP_SECRET", "\"${System.getenv("Personal_AppCenter_Token")}\"")
+        }
+
     }
 
     buildTypes {
@@ -50,7 +54,9 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.appcenter.analytics)
+    implementation(libs.appcenter.crashes)
+    implementation(libs.appcenter.distribute)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
