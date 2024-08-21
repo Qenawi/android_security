@@ -3,7 +3,7 @@ name: Build and Publish APK
 on:
   push:
     branches:
-      - main  # Change this to the branch you want to trigger the build on
+      - section_two_app_structure  # Change this to the branch you want to trigger the build on
 
 jobs:
   build:
