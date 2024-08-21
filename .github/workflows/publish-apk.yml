@@ -23,10 +23,16 @@ jobs:
         run: ./gradlew dependencies
 
       - name: Build APK
-        run: ./gradlew assembleRelease
+        run: ./gradlew assembleDebug
 
       - name: Install App Center CLI
         run: npm install -g appcenter-cli
+
+      - name: login
+        env:
+          APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_APP_SECRET }}
+        run: |
+          appcenter login --token "$APPCENTER_ACCESS_TOKEN"
 
       - name: Publish APK to App Center
         env:
@@ -34,7 +40,7 @@ jobs:
         run: |
           appcenter distribute release \
             --app "Qenawi/BuildExample" \
-            --file app/build/outputs/apk/release/app-release.apk \
+            --file app/build/outputs/apk/debug/app-debug.apk \
             --group "Testers"  # Replace with your distribution group
             --release-notes "Automated release via GitHub Actions"
             --token "$APPCENTER_ACCESS_TOKEN"
