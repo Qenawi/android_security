@@ -1,0 +1,39 @@
+name: Build and Publish APK
+
+on:
+  push:
+    branches:
+      - main  # Change this to the branch you want to trigger the build on
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+
+      - name: Install dependencies
+        run: ./gradlew dependencies
+
+      - name: Build APK
+        run: ./gradlew assembleRelease
+
+      - name: Install App Center CLI
+        run: npm install -g appcenter-cli
+
+      - name: Publish APK to App Center
+        env:
+          APPCENTER_TOKEN: ${{ secrets.APPCENTER_APP_SECRET }}  # Ensure you've added this token in your GitHub secrets
+        run: |
+          appcenter distribute release \
+            --app "your-app-center-organization/your-app-name" \
+            --file path-to-your-apk/app-release.apk \
+            --group "Testers"  # Replace with your distribution group
+            --release-notes "Automated release via GitHub Actions"
