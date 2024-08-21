@@ -1,0 +1,9 @@
+## Apk Content After unzipping
+- "Assets"
+- "com"
+- "lib"
+- "Meta-inf"
+- "res"
+- "AndroidManafist"
+- "classes.dex" : classes in dalvic
+- "resources.arsc" : compiled resources (strings / styles )
