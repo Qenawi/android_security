@@ -28,14 +28,6 @@ jobs:
       - name: Install App Center CLI
         run: npm install -g appcenter-cli
 
-      - name: login
-        env:
-          APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_APP_SECRET }}  # Ensure you've added this token in your GitHub secrets
-        run: |
-          appcenter login 
-
-
-
       - name: Publish APK to App Center
         env:
           APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_APP_SECRET }}  # Ensure you've added this token in your GitHub secrets
@@ -45,3 +37,4 @@ jobs:
             --file app/build/outputs/apk/release/app-release.apk \
             --group "Testers"  # Replace with your distribution group
             --release-notes "Automated release via GitHub Actions"
+            --token "$APPCENTER_ACCESS_TOKEN"
