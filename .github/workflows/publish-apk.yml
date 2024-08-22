@@ -25,22 +25,13 @@ jobs:
       - name: Build APK
         run: ./gradlew assembleDebug
 
-      - name: Install App Center CLI
-        run: npm install -g appcenter-cli
 
-      - name: login
-        env:
-          APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_APP_SECRET }}
-        run: |
-          appcenter login --token "$APPCENTER_ACCESS_TOKEN"
 
-      - name: Publish APK to App Center
-        env:
-          APPCENTER_ACCESS_TOKEN: ${{ secrets.APPCENTER_APP_SECRET }}  # Ensure you've added this token in your GitHub secrets
-        run: |
-          appcenter distribute release \
-            --app "Qenawi/BuildExample" \
-            --file app/build/outputs/apk/debug/app-debug.apk \
-            --group "Testers"  # Replace with your distribution group
-            --release-notes "Automated release via GitHub Actions"
-            --token "$APPCENTER_ACCESS_TOKEN"
+      - name: Upload APK to App Center
+        uses: MSAppCenter/appcenter-upload-action@v1
+        with:
+          app_name: 'BuildExample' # Replace with your App Center app name
+          app_owner_name: 'Qenawi' # Replace with your App Center owner name
+          token: ${{ secrets.APPCENTER_APP_SECRET }} # Store your App Center token in GitHub secrets
+          file: app/build/outputs/apk/debug/app-debug.apk # Replace with your APK path
+
