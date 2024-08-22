@@ -29,14 +29,10 @@ jobs:
       - name: Install App Center CLI
         run: npm install -g appcenter-cli
 
-      - name: Publish APK to App Center
+      - name: Run Deployment Script
         run: |
-          appcenter distribute release \
-            --app "Qenawi/BuildExample" \
-            --file app/build/outputs/apk/debug/app-debug.apk \
-            --group "Testers"  # Replace with your distribution group
-            --release-notes "Automated release via GitHub Actions"
-            --token 602496158243c94914d153dcc5bfb52f3f48421c
+            chmod +x ./scripts/appCenterDeploy.sh
+            ./scripts/appCenterDeploy.sh
 
 
 
