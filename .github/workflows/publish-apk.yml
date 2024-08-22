@@ -33,6 +33,8 @@ jobs:
         run: |
             chmod +x ./scripts/appCenterDeploy.sh
             ./scripts/appCenterDeploy.sh
+        env:
+          Token: ${{ secrets.APPCENTER_APP_SECRET }}
 
 
 
