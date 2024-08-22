@@ -25,13 +25,13 @@ jobs:
       - name: Build APK
         run: ./gradlew assembleDebug
 
-
-
-      - name: Upload APK to App Center
-        uses: MSAppCenter/appcenter-upload-action@v1
+      - name: upload artefact to App Center
+        uses: wzieba/AppCenter-Github-Action@v1
         with:
-          app_name: 'BuildExample' # Replace with your App Center app name
-          app_owner_name: 'Qenawi' # Replace with your App Center owner name
-          token: ${{ secrets.APPCENTER_APP_SECRET }} # Store your App Center token in GitHub secrets
-          file: app/build/outputs/apk/debug/app-debug.apk # Replace with your APK path
+            appName: Qenawi/BuildExample
+            token: ${{secrets.APPCENTER_APP_SECRET}}
+            group: Testers
+            file: app/build/outputs/apk/debug/app-debug.apk
+            notifyTesters: true
+            debug: true
 
