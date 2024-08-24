@@ -1,0 +1,25 @@
+// ADB shell cheat sheet
+#ADB : android debug bridge
+components
+- (ADBServer) run on host machine , it handle connection to mobile machine
+- (ADBDemon) run on mobile device manged by manufacture
+- (ADB client) the interface that is used to interact with adb server
+----------------------------------------------------------------------
+to connect using ip : tcp-ip
+adb connect <device ip>
+----------------------------------------------------------------------
+shell pm list packages -3  ->  f you want to filter the list to show only third-party apps (excluding system apps)
+-----------------------------------
+get path of packge
+adb shell pm path <packge name >
+-----------------------------------
+download file from mobile into
+adb pull path
+-----------------------------------
+
+
+NBe
+//com.ofss.obdx.and.nbe.com.eg
+
+7alan
+// com.halanuser
