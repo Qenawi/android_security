@@ -22,5 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-</application>
+        <activity android:name="edu.android_security.interview.lifecycle.counterApp.CounterAppActivity"
+            android:exported="true"  />
+        <activity android:name="edu.android_security.interview.lifecycle.counterApp.BestPracticesForHandlingBackgroundTasks" />
+        <activity android:name="edu.android_security.interview.lifecycle.serviceinteraction.ServiceActivity" />
+    </application>
 </manifest>
