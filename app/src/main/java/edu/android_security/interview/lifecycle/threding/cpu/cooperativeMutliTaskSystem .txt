@@ -1,0 +1,16 @@
+# Cooperative multitasking Sys :
+individual executing tasks release CPU resources by
+"yielding" , allowing other tasks to be executed with intention to be resumed
+later
+----------
+yielding vs termination - >
+when task is yielded processor PC<Program counter> moved to another
+task with in different instruction <instruction [i]> and once a task with in instruction[i] is yielded processor will resume first yielded task from first instruction
+-----------
+benefits  of cooperative :
+user can switch between different applications
+------------------
+issues :
+if a single task miss-behaves and didn't yield it will consume processor resources for a long time and block other tasks
+-----
+ex on OS : windows 3.1

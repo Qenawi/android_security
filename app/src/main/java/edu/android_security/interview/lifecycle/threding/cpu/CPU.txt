@@ -1,0 +1,22 @@
+CPu - > Central processing unit  , its black box we dont need to know how its built
+------
+1000 1001 1101 1000 -> CPU
+# CPU input [1000 1001 1101 1000] is sequace of bits
+# each  sequance  of bits  is called command
+# example for command Move content of register BX into Register AX
+= Register = CPU internal storage
+
+# commands that cpu  know how to interact with called instructions as cpu dont deal with random commands
+----------
+# Machine Code is ordered sequence of instructions
+= [instruction 1][instruction 2][instruction 3][instruction 4]
+Machine code is sequance of instructions and instruction  is set of commands and command is set of bits
+-------
+Compiler playes key role in
+converting higlvl language (human readable) to Machine code which could be read and
+executed by cpu
+---------------------------------
+CPU operations
+# cpu take machine code as input and based on instructions it interact with io & memory
+= Machine Code =>  CPU <-> [ memory , io ]
+------------------------------------------

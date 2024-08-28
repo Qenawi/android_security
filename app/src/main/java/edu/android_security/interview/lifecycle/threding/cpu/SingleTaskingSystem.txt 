@@ -1,0 +1,13 @@
+System architecture
+System = Cpu + operating System
+# OS operating system
+= OSX , Linux , Widows  -> special kind of sw which take advantage of hardware capabilities and expose them to 3rd party application
+in conviennent and performant way
+
+------------------------------------------
+# 1 Single - Tasking system
+= Execute the machine code of one single task until task terminates
+= os can only run on program at time and in order to run another you need to fully close first
+
+------------------------------------------
+Example on OS that was single : MD

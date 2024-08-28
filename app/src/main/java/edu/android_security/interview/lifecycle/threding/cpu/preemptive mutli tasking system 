@@ -1,0 +1,12 @@
+-------------------------------------------
+Preemptive multi tasking execution example :
+OOperating system mange cpu resources by allocating cpu time slices to different tasks according to its own scheduling
+algorithm
+-------------------------------------------
+how concurrency work on preemptive multitask system
+os say to individual task its your time to run and then pause it and resume or start another task
+------------------------------------
+advantages:
+allow concurrency and make sure that system remain responsive as os it self pause and resume task based on complex logic that we don't
+have to deal with
+
