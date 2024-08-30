@@ -1,0 +1,27 @@
+Multi processing system :
+A system with more than one CPU
+----------------------
+CPU got updated and now it can has cores
+
+#####################
+#                   #
+#       CPU         #
+#  ###############  #
+#  #             #  #
+#  #Cores     #  #
+#  #             #  #
+#  ###############  #
+#                   #
+#####################
+#         |||        #
+#####################
+
+----------------------
+Benefits -> multi core cpu allow parallelism
+----------------------
+concurrency vs parallelism
+
+concurrency -> tasks appears to be executed on parallel and make progress on same time period
+
+parallelism-> tasks are executed on parallel and make progress at same instant
+-----------------------------------------

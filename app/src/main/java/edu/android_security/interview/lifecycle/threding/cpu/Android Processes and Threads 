@@ -1,0 +1,12 @@
+Process ->
+
+# in non multi tasking system , there is just on task that corresponds
+to the only running program
+
+# in android , each running program <app> get its own task and task is
+associated with isolated execution env <sandbox> , together they are called process
+
+
+-----------------------
+SandBox as term : is an isolated testing env that enables users to
+run program or open files with out effecting other  applications or platform on which they run
