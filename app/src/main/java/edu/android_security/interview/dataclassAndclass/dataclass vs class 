@@ -1,0 +1,17 @@
+
+class is blueprint / template  for creating object
+------------
+Data class :
+normal class with extra functionality designed to hold data <mandatory> and can do any thing normal class can do
+
+
+Normal class :
+can be used for any purpose , include holding data <not mandatory>
+
+------------------------
+data class has unique methods to support data related operations
+# equals
+# hashcode
+# toString
+# copy()
+# componentN()
